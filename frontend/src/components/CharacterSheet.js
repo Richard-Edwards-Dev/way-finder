@@ -43,8 +43,8 @@ function CharacterSheet() {
 
   return (
     <div className='character-details'>
-        <div className="info row text-center">
-            <h2 className="name col-6">{character.charName}</h2>
+        <div className="info row text-center d-flex align-items-center">
+            <h2 className="name col-6 text-center">{character.charName}</h2>
             <div className="details col-3 d-flex justify-content-center">
                 <div className='align-self-center'>
                 <p className='mb-3'>Ancestry: {character.ancestry} </p>

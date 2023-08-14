@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useCharactersContext } from '../hooks/useCharactersContext'
 import { useAuthContext } from '../hooks/useAuthContext'
 
@@ -10,7 +9,6 @@ import { Link } from 'react-router-dom'
 const CharacterDetails = ({ character }) => {
   const { dispatch } = useCharactersContext()
   const { user } = useAuthContext()
-  const [selectedCharacter, setSelectedCharacter] = useState(null)
   console.log(character)
 
 
@@ -32,24 +30,20 @@ const CharacterDetails = ({ character }) => {
     }
   }
 
-  const getDetails = () => {
-
-      setSelectedCharacter(character)
-    
-  }
 
   return (
-    <Link to={ `/characterSheet/${character._id}`} style={{ textDecoration: 'none' }} >
-    <div className="character-details" onClick={getDetails}>
+    
+    <div className="character-details" >
+      <Link to={ `/characterSheet/${character._id}`} style={{ textDecoration: 'none' }} >
       <h4 >{character.charName}</h4>
       <p><strong>Ancestry: </strong>{character.ancestry}</p>
       <p><strong>Background: </strong>{character.background}</p>
       <p><strong>Class: </strong>{character.charClass}</p>
       <p>{formatDistanceToNow(new Date(character.createdAt), { addSuffix: true })}</p>
+      </Link>
       <span className="material-symbols-outlined" onClick={handleClick}>delete</span>
-
     </div>
-    </Link>
+    
 
   )
 }

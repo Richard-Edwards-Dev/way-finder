@@ -22,7 +22,7 @@ function CharacterSave({character}) {
  }
 
   return (
-    <h4 onClick={handleSave}>Save Changes</h4>
+    <button onClick={handleSave}>Save Changes</button>
   )
 }
 

@@ -92,6 +92,7 @@ header a {
   cursor: pointer;
 }
 
+
 /* new character form */
 label, input {
   display: block;
@@ -105,7 +106,7 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 }
-form button {
+form button, div button {
   background: var(--primary);
   border: 0;
   color: #fff;
